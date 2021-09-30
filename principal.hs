@@ -285,9 +285,9 @@ falterarvacinacom2Doses tipodose vacinaAlterada (cpfData, [(vacina1,dataVacinaca
 -- Aplica a Primeira Dose
 aplicaPrimDose :: CPF -> CadastroSUS -> FaixaIdade -> Municipio -> Vacina -> Data -> Data -> Vacinados -> Vacinados
 aplicaPrimDose citizenCPF dataBankSUS faixadeidade municipio vacina dataVacinacao dataDeHj dataBankVacinados
- | (firstDoseApplied citizenCPF dataBankVacinados == True)               = error "Primeira dose já aplicada"  --Se minha primeira dose foi aplicada, retorne "Primeira dose já aplicada"
+ | (firstDoseApplied citizenCPF dataBankVacinados == True)                        = error "Primeira dose já aplicada"  --Se minha primeira dose foi aplicada, retorne "Primeira dose já aplicada"
  | (checaCPF citizenCPF dataBankSUS == False)                                     = error "CPF não encontrado no Banco de Dados SUS" --Se o CPF não foi encontrado no Banco De Dados SUS retorne "CPF não encontrado no Banco de Dados SUS"
- | (checaIntervaloDeIdades citizenCPF dataBankSUS faixadeidade dataDeHj == False) = error "Fora da idade de vacinação corrente" --Se a idade do CPF que usei não está na minha faixa de idades, retorne "Fora da idade de vacinação corrente"
+ | (checaIntervaloDeIdades citizenCPF dataBankSUS faixadeidade dataDeHj == False) = error "Fora da idade de vacinação corrente" --Se a idade estiver fora da faixa de idades, retorne "Fora da idade de vacinação corrente"
  | (checaMunicipioDoCidadao citizenCPF dataBankSUS municipio == False)            = error "Municipio não compatível com o CadastroSUS. Por favor atualizar município." --Se o municipio cadastrado no dataBankSUS não for igual o informado pelo cidadão retorne "Municipio não compatível com o CadastroSUS. Por favor atualizar município."
  | vacina == "Jansen"                                                             = (:) (citizenCPF, [(vacina, dataVacinacao), (vacina, dataVacinacao)])  dataBankVacinados --Adiciona ao meu dataBankVacinados cidadão que tomaram "Jansen", como Jansen é dose única adicionamos duas tuplas à lista Type "Doses"
  | otherwise                                                                      = (:) (citizenCPF, [(vacina, dataVacinacao)]) dataBankVacinados --Adiciona ao meu dataBankVacinados cidadão que está tudo OK e tomou vacina diferente da "Jansen"

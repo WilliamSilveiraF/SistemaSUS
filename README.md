@@ -79,8 +79,24 @@ A finalidade deste tópico é resolver o problema da falta de dados para gestore
 ##
 
 **1) aplicaPrimDose : : CPF -> CadastroSUS -> FaixaIdade -> Municipio -> Vacina -> Data -> Data -> Vacinados -> Vacinados**
-- Essa função tem o objetivo de adicionar a primeira dose a um Cidadão, primeiro ela checa se a primeira dose já foi aplicada, depois checa se o Cidadão já contém cadastro no dataBankSUS através do seu CPF,
-logo em seguida confere se o Cidadão está no intervalo certo que é permitido para se vacinar, e após isso checa se o município informado confere com o que o Cidadão informou no dataBankSUS. Se algo estiver errado até esse momento algum error será disparado indicando alguma ação a ser feita, senão a função confere se a dose que ele tomou foi "Jansen" caso verdadeiro adiciona ao dataBankVacinados uma nova pessoa com 2 doses iguais de "Jansen". De outro modo, se a primeira dose dela foi de outra vacina, o cidadão será adicionado ao dataBankVacinados com apenas uma dose tomada. 
+- Essa função tem o objetivo de adicionar a primeira dose a um Cidadão. 
+- Primeiro ela checa se a primeira dose já foi aplicada.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaPrimDose1.png)
+ 
+- Depois checa se o Cidadão já contém cadastro no dataBankSUS através do seu CPF.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaPrimDose2.png)
+
+- Logo em seguida confere se o Cidadão está no intervalo certo que é permitido para se vacinar.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaPrimDose3.png)
+
+- E após isso checa se o município informado confere com o que o Cidadão informou no dataBankSUS.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaPrimDose4.png)
+
+- Se algo estiver errado até esse momento algum error será disparado indicando alguma ação a ser feita, senão a função confere se a dose que ele tomou foi "Jansen" caso verdadeiro adiciona ao dataBankVacinados uma nova pessoa com 2 doses iguais de "Jansen".
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaPrimDose5.png)
+
+- De outro modo, se a primeira dose dela foi de outra vacina, o cidadão será adicionado ao dataBankVacinados com apenas uma dose tomada. 
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaPrimDose6.png)
 
 ##
 
