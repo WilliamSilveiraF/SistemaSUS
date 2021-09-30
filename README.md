@@ -78,13 +78,40 @@ A finalidade deste tópico é resolver o problema da falta de dados para gestore
 
 ##
 
-**1) aplicaPrimDose :: CPF -> CadastroSUS -> FaixaIdade -> Municipio -> Vacina -> Data -> Data -> Vacinados -> Vacinados**
+**1) aplicaPrimDose : : CPF -> CadastroSUS -> FaixaIdade -> Municipio -> Vacina -> Data -> Data -> Vacinados -> Vacinados**
 - Essa função tem o objetivo de adicionar a primeira dose a um Cidadão, primeiro ela checa se a primeira dose já foi aplicada, depois checa se o Cidadão já contém cadastro no dataBankSUS através do seu CPF,
 logo em seguida confere se o Cidadão está no intervalo certo que é permitido para se vacinar, e após isso checa se o município informado confere com o que o Cidadão informou no dataBankSUS. Se algo estiver errado até esse momento algum error será disparado indicando alguma ação a ser feita, senão a função confere se a dose que ele tomou foi "Jansen" caso verdadeiro adiciona ao dataBankVacinados uma nova pessoa com 2 doses iguais de "Jansen". De outro modo, se a primeira dose dela foi de outra vacina, o cidadão será adicionado ao dataBankVacinados com apenas uma dose tomada. 
-2) aplicaSegDose :: CPF -> Data -> Vacinados -> Vacinados
-- Essa função tem o objetivo de adicionar a segunda dose à uma pessoa que já tomou a primeira dose. Primeiro ela confere se a primeira dose já foi aplicada, depois confere se a pessoa já tomou a segunda dose alguma vez, logo em seguida confere se a data da Primera Dose é maior do que a data de Segunda Dose, se algumas dessas funções auxiliares forem verdadeiras, a função retornará Error indicando alguma ação. Do contrário, a função irá adicionar uma nova dose ao vacinado.
-3) atualizaVacina:: CPF -> TipoDose -> Vacina -> Vacinados -> Vacinados
-- Alguma vacina pode ter sido adicionada errada e será necessário altera-la no dataBankVacinados, logo essa função tem como objetivo alterar uma vacina no dataBankVacinados, assim primeiro ela checa se o CPF da pessoa consta no Banco de Vacinados, em seguida ela confere se o número de vacinas que esse CPF já tomou é menor que a Tipo Dose de Vacina que ele quer alterar, pois é impossível alterar o que não existe. Além disso, se tudo certo então ele atualiza a Vacina.
+
+##
+
+**2) aplicaSegDose : : CPF -> Data -> Vacinados -> Vacinados**
+- Essa função tem o objetivo de adicionar a segunda dose à uma pessoa que já tomou a primeira dose. 
+- Primeiro ela confere se a primeira dose já foi aplicada.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaSegDose1.png)
+
+- Depois confere se a pessoa já tomou a segunda dose alguma vez.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaSegDose2.png)
+
+- Logo em seguida confere se a data da Primera Dose é maior do que a data de Segunda Dose.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaSegDose3.png)
+
+- Se algumas dessas funções auxiliares forem verdadeiras, a função retornará Error indicando alguma ação. Do contrário, a função irá adicionar uma nova dose ao vacinado.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/aplicaSegDose4.png)
+
+##
+
+**3) atualizaVacina : : CPF -> TipoDose -> Vacina -> Vacinados -> Vacinados**
+- Alguma vacina pode ter sido adicionada errada e será necessário altera-la no dataBankVacinados, logo essa função tem como objetivo alterar uma vacina no dataBankVacinados. 
+- Assim primeiro ela checa se o CPF da pessoa consta no Banco de Vacinados.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/atualizaVacina1.png)
+
+- Em seguida ela confere se o número de vacinas que esse CPF já tomou é menor que a Tipo Dose de Vacina que ele quer alterar, pois é impossível alterar o que não existe. 
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/atualizaVacina2.png)
+
+- Além disso, se tudo certo então ele atualiza a Vacina.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/atualizaVacina3.png)
+
+##
 
 # Geração de Insight's para gestores públicos através do dataBankVacinados & dataBankSUS
 1) quantidadeDoseMun :: Vacinados -> TipoDose -> Municipio -> CadastroSUS -> Quantidade
