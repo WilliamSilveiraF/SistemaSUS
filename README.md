@@ -130,8 +130,9 @@ A finalidade deste tópico é resolver o problema da falta de dados para gestore
 ##
 
 # Geração de Insight's para gestores públicos através do dataBankVacinados & dataBankSUS
-1) quantidadeDoseMun :: Vacinados -> TipoDose -> Municipio -> CadastroSUS -> Quantidade
+**1) quantidadeDoseMun :: Vacinados -> TipoDose -> Municipio -> CadastroSUS -> Quantidade**
 - Retorna a quantidade de vacinados em um município com um determinado TipoDose. Por exemplo, quantidade de pessoas que moram em Florianópolis de acordo com o dataBankSUS que já tomaram a primeira dose.
+
 2) quantidadeDoseEst :: Vacinados -> TipoDose -> Estado -> CadastroSUS -> Quantidade
 - Retorna a quantidade de vacinados em um estado com um determinado TipoDose. Por exemplo, quantidade de pessoas que moram em Santa Catarina de acordo com o dataBankSUS que já tomaram a primeira dose.
 3) quantidadeMunIdDose :: Vacinados -> Municipio -> FaixaIdade -> TipoDose -> Data -> CadastroSUS -> Quantidade
