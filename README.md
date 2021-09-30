@@ -2,6 +2,9 @@
 # SistemaSUS
 Esse foi um projeto desenvolvido na minha curta passagem pela Universidade Federal de Sergipe na matéria de Programação Funcional, onde tive a oportunidade de aprender conceitos básicos sobre os paradigmas funcionais e programação em Haskell.
 
+# Usabilidade
+Para fins de teste é necessário ter o GHCI instalado em sua máquina para a compilação do código.
+
 # Análise do Projeto
 O projeto se dividiu em quartro partes: controle de cidadãos no dataBankSUS, geração de Insight's para gestores a partir do meu dataBankSUS, controle de vacinados no dataBankVacinados e geração de Insight's para gestores públicos a partir dos dois dataBank's
 
