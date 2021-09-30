@@ -130,20 +130,49 @@ A finalidade deste tópico é resolver o problema da falta de dados para gestore
 ##
 
 # Geração de Insight's para gestores públicos através do dataBankVacinados & dataBankSUS
-**1) quantidadeDoseMun :: Vacinados -> TipoDose -> Municipio -> CadastroSUS -> Quantidade**
+**1) quantidadeDoseMun : : Vacinados -> TipoDose -> Municipio -> CadastroSUS -> Quantidade**
 - Retorna a quantidade de vacinados em um município com um determinado TipoDose. Por exemplo, quantidade de pessoas que moram em Florianópolis de acordo com o dataBankSUS que já tomaram a primeira dose.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeDoseMun.png)
 
-2) quantidadeDoseEst :: Vacinados -> TipoDose -> Estado -> CadastroSUS -> Quantidade
+##
+
+**2) quantidadeDoseEst : : Vacinados -> TipoDose -> Estado -> CadastroSUS -> Quantidade**
 - Retorna a quantidade de vacinados em um estado com um determinado TipoDose. Por exemplo, quantidade de pessoas que moram em Santa Catarina de acordo com o dataBankSUS que já tomaram a primeira dose.
-3) quantidadeMunIdDose :: Vacinados -> Municipio -> FaixaIdade -> TipoDose -> Data -> CadastroSUS -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeDoseEst.png)
+
+##
+
+**3) quantidadeMunIdDose : : Vacinados -> Municipio -> FaixaIdade -> TipoDose -> Data -> CadastroSUS -> Quantidade**
 - Retorna a quantidade de vacinados numa certa faixa de idade com um determinado TipoDose residentes num município. Por exemplo, quantidade de pessoas que moram em Curitiba e possuem idade entrem 45 e 55 anos de acordo com o dataBankSUS que já tomaram a Segunda Dose.
-4) quantidadeEstIdDose :: Vacinados -> Estado -> FaixaIdade -> TipoDose -> Data -> CadastroSUS -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeMunIdDose.png)
+
+##
+
+**4) quantidadeEstIdDose : : Vacinados -> Estado -> FaixaIdade -> TipoDose -> Data -> CadastroSUS -> Quantidade**
 - Retorna a quantidade de vacinados numa certa faixa de idade com um determinado TipoDose residentes num Estado. Por exemplo, quantidade de pessoas que moram no Paraná e possuem idade entrem 20 e 35 anos de acordo com o dataBankSUS que já tomaram a Primeira Dose.
-5) quantidadeMunVacDose :: Vacinados -> Municipio -> Vacina -> TipoDose -> CadastroSUS -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeEstIdDose.png)
+
+##
+
+**5) quantidadeMunVacDose : : Vacinados -> Municipio -> Vacina -> TipoDose -> CadastroSUS -> Quantidade**
 - Retorna a quantidade de vacinados que tomaram um certo tipo de vacina residentes num município. Por exemplo, quantidade de pessoas que moram em Joinville que tomaram a vacina "Pfizer".
-6) quantidadeEstVacDose :: Vacinados -> Estado -> Vacina -> TipoDose -> CadastroSUS -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeMunVacDose.png)
+
+##
+
+**6) quantidadeEstVacDose : : Vacinados -> Estado -> Vacina -> TipoDose -> CadastroSUS -> Quantidade**
 - Retorna a quantidade de vacinados que tomaram um certo tipo de vacina residentes num estado. Por exemplo, quantidade de pessoas que moram no Rio Grande do Sul que tomaram a vacina "AstraZeneca".
-7) quantidadeMunAtrasados :: Vacinados -> CadastroSUS -> Municipio -> Data -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeEstVacDose.png)
+
+##
+
+**7) quantidadeMunAtrasados : : Vacinados -> CadastroSUS -> Municipio -> Data -> Quantidade**
 - Retorna a quantidade de vacinados atrasados na segunda dose em um município. Por exemplo, quantidade de pessoas que moram em Araranguá e estão atrasadas na segunda dose. Além disso, a função filtra o tipo de vacina que a pessoa tomou, se ela tomou CoronaVac o intervalo considerado no cálculo é 21 dias, caso não é considerado 90 dias de intervalo.
-8) quantidadeEstAtrasados :: Vacinados -> CadastroSUS -> Estado -> Data -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeMunAtrasados.png)
+
+##
+
+**8) quantidadeEstAtrasados : : Vacinados -> CadastroSUS -> Estado -> Data -> Quantidade**
 - Retorna a quantidade de vacinados atrasados na segunda dose em um Estado. Por exemplo, quantidade de pessoas que moram em São Paulo e estão atrasadas na segunda dose. Além disso, a função filtra o tipo de vacina que a pessoa tomou, se ela tomou CoronaVac o intervalo considerado no cálculo é 21 dias, caso não é considerado 90 dias de intervalo.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeEstAtrasados.png)
+
