@@ -142,7 +142,7 @@ cidadaosPorEstadoIdade dataBankSUS state (initAge, endAge) dataDeHj =
 --gerar lista por um conjunto de Faixas de Idades e por Municipio
 geraListaMunicipioFaixas :: CadastroSUS -> Municipio -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]
 geraListaMunicipioFaixas dataBankSUS municipio listaIntervaloDeIdades dataDeHj = 
-    [(ageRanges, amount) | ageRanges <- listaIntervaloDeIdades, amount <- [cidadaosPorEstadoIdade dataBankSUS municipio ageRanges dataDeHj]]
+    [(ageRanges, amount) | ageRanges <- listaIntervaloDeIdades, amount <- [cidadaosPorMunicipioIdade dataBankSUS municipio ageRanges dataDeHj]]
 
 --gerar lista por um conjunto de Faixas de Idades e por Estado
 geraListaEstadoFaixas :: CadastroSUS -> Estado -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]

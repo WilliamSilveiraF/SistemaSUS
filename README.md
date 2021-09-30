@@ -7,29 +7,72 @@ O projeto se dividiu em quartro partes: controle de cidadãos no dataBankSUS, ge
 
 # Controle De Cidadãos
 Nesse tópico objetivo é resolver o problema de gerenciamento de cidadãos no meu dataBankSUS para isso foram feitas as funções abaixo:
-1) adicionaSUS :: Cidadao -> CadastroSUS -> CadastroSUS
+
+##
+
+**1) adicionaSUS : : Cidadao -> CadastroSUS -> CadastroSUS**
 - O objetivo da função é adicionar um novo cidadão ao dataBankSUS, ela leva como parâmetro o cidadão para ser adicionado e um dataBankSUS e retorna um dataBankSUS já com o novo cidadão adicionado.
-2) atualizaEndSUS :: CPF -> CadastroSUS -> Endereco -> CadastroSUS
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/AdicionaSUS.png)
+##
+
+**2) atualizaEndSUS : : CPF -> CadastroSUS -> Endereco -> CadastroSUS**
 - O objetivo da função é atualizar o endereço de um cidadão no meu dataBankSUS a partir do CPF.
-3) atualizaTelSUS :: CPF  -> CadastroSUS -> Telefone -> CadastroSUS
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/atualizaEndSUS.png)
+
+##
+
+**3) atualizaTelSUS : : CPF  -> CadastroSUS -> Telefone -> CadastroSUS**
 - O objetivo da função é atualizar o Telefone de um cidadão no meu dataBankSUS a partir do CPF.
-4) removeSUS :: CPF -> CadastroSUS -> CadastroSUS
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/atualizaTelSUS.png)
+
+##
+
+**4) removeSUS : : CPF -> CadastroSUS -> CadastroSUS**
 - O objetivo da função é remover um cidadão que faz parte do dataBankSUS mas veio a falecer por exemplo.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/removeSUS.png)
+
 
 # Geração de Insight's para gestores públicos através do dataBankSUS
 A finalidade deste tópico é resolver o problema da falta de dados para gestores públicos a partir do meu dataBankSUS
-1) cidadaosPorMunicipio :: CadastroSUS -> Municipio -> Quantidade
+
+##
+
+**1) cidadaosPorMunicipio :: CadastroSUS -> Municipio -> Quantidade**
 - O objetivo da função é retornar a quantidade de pessoas cadastradas no meu dataBankSUS residentes num município específico.
-2) cidadaosPorEstado :: CadastroSUS -> Estado -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadaosPorMunicipio.png)
+
+##
+
+**2) cidadaosPorEstado :: CadastroSUS -> Estado -> Quantidade**
 - O objetivo da função é retornar a quantidade de pessoas cadastradas no meu dataBankSUS residentes num estado específico.
-3) cidadaosPorMunicipioIdade :: CadastroSUS -> Municipio -> FaixaIdade -> Data -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadaosPorEstado.png)
+
+##
+
+**3) cidadaosPorMunicipioIdade :: CadastroSUS -> Municipio -> FaixaIdade -> Data -> Quantidade**
 - O objetivo da função é retornar a quantidade de pessoas cadastradas no meu dataBankSUS que estão entre um Intervalo de Idades (ex: Entre 40 e 75 anos) e residem num município específico.
-4) cidadaosPorEstadoIdade :: CadastroSUS -> Estado -> FaixaIdade -> Data -> Quantidade
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadaosPorMunicipioIdade.png)
+
+##
+
+**4) cidadaosPorEstadoIdade :: CadastroSUS -> Estado -> FaixaIdade -> Data -> Quantidade**
 - O objetivo da função é retornar a quantidade de pessoas cadastradas no meu dataBankSUS que estão entre um Intervalo de Idades (ex: Entre 40 e 75 anos) e residem num estado específico.
-5) geraListaMunicipioFaixas :: CadastroSUS -> Municipio -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadaosPorEstadoIdade.png)
+
+##
+
+**5) geraListaMunicipioFaixas :: CadastroSUS -> Municipio -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]**
 - O Objetivo da função é gerar uma lista de residentes de um município com tuplas desse formato "((20,30), 12)", onde "(20,30)" representam o intervalo de idade (idadeMin, idadeMax) e "12" representa a quantidade de pessoas nesse intervalo.
-6) geraListaEstadoFaixas :: CadastroSUS -> Estado -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/geraListaMunicipioFaixas.png)
+
+
+##
+
+**6) geraListaEstadoFaixas :: CadastroSUS -> Estado -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]**
 - O Objetivo da função é gerar uma lista de residentes de um estado com tuplas desse formato "((20,30), 12)", onde "(20,30)" representam o intervalo de idade (idadeMin, idadeMax) e "12" representa a quantidade de pessoas nesse intervalo.
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/geraListaEstadoFaixas.png)
+
+##
 
 # Controle De Vacinados
 1) aplicaPrimDose :: CPF -> CadastroSUS -> FaixaIdade -> Municipio -> Vacina -> Data -> Data -> Vacinados -> Vacinados
