@@ -156,7 +156,8 @@ geraListaEstadoFaixas dataBankSUS state listaIntervaloDeIdades dataDeHj =
 type Vacinados = [Vacinado]
 
 dataBankVacinados :: Vacinados
-dataBankVacinados = [ 
+dataBankVacinados = [
+                    (111111111,[("Pfizer",(22,9,2021))]),
                     (63867508057, [("Pfizer", (1, 12, 2020)), ("Pfizer", (03, 01, 2021))] ),
                     (77185804325, [ ("AstraZeneca", (2, 11, 2020)) ]),
                     (91010353917, [("CoronaVac", (17, 11, 2020)), ("CoronaVac", (30, 12, 2020))]),
@@ -245,7 +246,7 @@ checadorSeDataSegDoseMaiorQuePrimDose citizenCPF dataVacinacao dataBankVacinados
 -- Adiciona uma dose ao vacinado
 adicionaOutraDoseAoVacinado :: CPF -> Data -> Vacinados -> Vacinados
 adicionaOutraDoseAoVacinado citizenCPF dataVacinacao dataBankVacinados = -- A primeira compreensão retorna uma lista com apenas o cidadao que está sendo vacinado, adicionando a dose que ele tomou a sua lista tipo [Doses]   //   A segunda compreensão retorna o dataBankVacinados sem o cidadão que está sendo vacinado
-    concat [  [fAdicionarVacina (cpfData,[(vacinaData,dataVacinacaoData)]) citizenCPF | (cpfData,[(vacinaData,dataVacinacaoData)]) <- dataBankVacinados], [vacinado | vacinado <- dataBankVacinados, not (citizenCPF == getCPFDeVacinado vacinado)] ]
+    concat [  [fAdicionarVacina (cpfData,[(vacinaData,dataVacinacaoData)]) citizenCPF | (cpfData,[(vacinaData,dataVacinacaoData)]) <- dataBankVacinados, citizenCPF == cpfData], [vacinado | vacinado <- dataBankVacinados, not (citizenCPF == getCPFDeVacinado vacinado)] ]
              where
                fAdicionarVacina (cpfData,[(vacinaData,dataVacinacaoData)]) citizenCPF
                  | (cpfData == citizenCPF)                                  =  (citizenCPF,(:) (vacinaData, dataVacinacao) [ (vacinaData,dataVacinacaoData)])     

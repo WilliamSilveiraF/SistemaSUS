@@ -37,46 +37,50 @@ A finalidade deste tópico é resolver o problema da falta de dados para gestore
 
 ##
 
-**1) cidadaosPorMunicipio :: CadastroSUS -> Municipio -> Quantidade**
+**1) cidadaosPorMunicipio : : CadastroSUS -> Municipio -> Quantidade**
 - O objetivo da função é retornar a quantidade de pessoas cadastradas no meu dataBankSUS residentes num município específico.
 ![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadaosPorMunicipio.png)
 
 ##
 
-**2) cidadaosPorEstado :: CadastroSUS -> Estado -> Quantidade**
+**2) cidadaosPorEstado : : CadastroSUS -> Estado -> Quantidade**
 - O objetivo da função é retornar a quantidade de pessoas cadastradas no meu dataBankSUS residentes num estado específico.
 ![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadaosPorEstado.png)
 
 ##
 
-**3) cidadaosPorMunicipioIdade :: CadastroSUS -> Municipio -> FaixaIdade -> Data -> Quantidade**
+**3) cidadaosPorMunicipioIdade : : CadastroSUS -> Municipio -> FaixaIdade -> Data -> Quantidade**
 - O objetivo da função é retornar a quantidade de pessoas cadastradas no meu dataBankSUS que estão entre um Intervalo de Idades (ex: Entre 40 e 75 anos) e residem num município específico.
-![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadaosPorMunicipioIdade.png)
+![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadadaosPorMunicipioIdade.png)
 
 ##
 
-**4) cidadaosPorEstadoIdade :: CadastroSUS -> Estado -> FaixaIdade -> Data -> Quantidade**
+**4) cidadaosPorEstadoIdade : : CadastroSUS -> Estado -> FaixaIdade -> Data -> Quantidade**
 - O objetivo da função é retornar a quantidade de pessoas cadastradas no meu dataBankSUS que estão entre um Intervalo de Idades (ex: Entre 40 e 75 anos) e residem num estado específico.
 ![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/cidadaosPorEstadoIdade.png)
 
 ##
 
-**5) geraListaMunicipioFaixas :: CadastroSUS -> Municipio -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]**
+**5) geraListaMunicipioFaixas : : CadastroSUS -> Municipio -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]**
 - O Objetivo da função é gerar uma lista de residentes de um município com tuplas desse formato "((20,30), 12)", onde "(20,30)" representam o intervalo de idade (idadeMin, idadeMax) e "12" representa a quantidade de pessoas nesse intervalo.
 ![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/geraListaMunicipioFaixas.png)
 
 
 ##
 
-**6) geraListaEstadoFaixas :: CadastroSUS -> Estado -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]**
+**6) geraListaEstadoFaixas : : CadastroSUS -> Estado -> [FaixaIdade] -> Data -> [(FaixaIdade, Quantidade)]**
 - O Objetivo da função é gerar uma lista de residentes de um estado com tuplas desse formato "((20,30), 12)", onde "(20,30)" representam o intervalo de idade (idadeMin, idadeMax) e "12" representa a quantidade de pessoas nesse intervalo.
 ![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/geraListaEstadoFaixas.png)
 
 ##
 
 # Controle De Vacinados
-1) aplicaPrimDose :: CPF -> CadastroSUS -> FaixaIdade -> Municipio -> Vacina -> Data -> Data -> Vacinados -> Vacinados
-- Essa função tem o objetivo de adicionar a primeira dose a um Cidadão, primeiro ela checa se a primeira dose já foi aplicada, depois checa se o Cidadão já contém cadastro no dataBankSUS através do seu CPF, logo em seguida confere se o Cidadão está no intervalo certo que é permitido para se vacinar, e após isso checa se o município informado confere com o que o Cidadão informou no dataBankSUS. Se algo estiver errado até esse momento algum error será disparado indicando alguma ação a ser feita, senão a função confere se a dose que ele tomou foi "Jansen" caso verdadeiro adiciona ao dataBankVacinados uma nova pessoa com 2 doses iguais de "Jansen". De outro modo, se a primeira dose dela foi de outra vacina, o cidadão será adicionado ao dataBankVacinados com apenas uma dose tomada. 
+
+##
+
+**1) aplicaPrimDose :: CPF -> CadastroSUS -> FaixaIdade -> Municipio -> Vacina -> Data -> Data -> Vacinados -> Vacinados**
+- Essa função tem o objetivo de adicionar a primeira dose a um Cidadão, primeiro ela checa se a primeira dose já foi aplicada, depois checa se o Cidadão já contém cadastro no dataBankSUS através do seu CPF,
+logo em seguida confere se o Cidadão está no intervalo certo que é permitido para se vacinar, e após isso checa se o município informado confere com o que o Cidadão informou no dataBankSUS. Se algo estiver errado até esse momento algum error será disparado indicando alguma ação a ser feita, senão a função confere se a dose que ele tomou foi "Jansen" caso verdadeiro adiciona ao dataBankVacinados uma nova pessoa com 2 doses iguais de "Jansen". De outro modo, se a primeira dose dela foi de outra vacina, o cidadão será adicionado ao dataBankVacinados com apenas uma dose tomada. 
 2) aplicaSegDose :: CPF -> Data -> Vacinados -> Vacinados
 - Essa função tem o objetivo de adicionar a segunda dose à uma pessoa que já tomou a primeira dose. Primeiro ela confere se a primeira dose já foi aplicada, depois confere se a pessoa já tomou a segunda dose alguma vez, logo em seguida confere se a data da Primera Dose é maior do que a data de Segunda Dose, se algumas dessas funções auxiliares forem verdadeiras, a função retornará Error indicando alguma ação. Do contrário, a função irá adicionar uma nova dose ao vacinado.
 3) atualizaVacina:: CPF -> TipoDose -> Vacina -> Vacinados -> Vacinados
