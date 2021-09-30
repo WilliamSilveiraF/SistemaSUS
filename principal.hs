@@ -4,6 +4,7 @@ type CadastroSUS = [Cidadao]
 dataBankSUS::CadastroSUS
 dataBankSUS = -- PS: Todos os dados foram gerados pelo site 4Devs e alterados, e são SOMENTE usados para fins acadêmicos.
     [
+    (111111111, "Tiago Reis", 'M', (01,07,1982),"Avenida Faria Lima, 1500","Sao Paulo", "SP", "1199999999", "tiagoreis@meuteste.com.br"),
     (63867508057, "Thiago Santiago Vieira", 'M', (13,05,1981),"Rua Porto, 491","Curitiba", "PR", "65983086273", "santiagovieira@meuteste.com.br"),
     (77185804325, "Yasmin Zanin Calisto Porto",'F', (20,01,1964), "Rua Ze Antonio, 727","Belo Horizonte", "MG", "35987920626", "zanincalisto@meuteste.com.br"),
     (91010353917, "Sophia Porto Scheff", 'F', (25,02,1968),"Rua San Francisco, 269","Macapa", "AP", "96987481836", "sophiascheff@meuteste.com.br"),
