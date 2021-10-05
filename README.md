@@ -170,12 +170,12 @@ A finalidade deste tópico é resolver o problema da falta de dados para gestore
 ##
 
 **7) quantidadeMunAtrasados : : Vacinados -> CadastroSUS -> Municipio -> Data -> Quantidade**
-- Retorna a quantidade de vacinados atrasados na segunda dose em um município. Por exemplo, quantidade de pessoas que moram em Araranguá e estão atrasadas na segunda dose. Além disso, a função filtra o tipo de vacina que a pessoa tomou, se ela tomou CoronaVac o intervalo considerado no cálculo é 21 dias, caso não é considerado 90 dias de intervalo.
+- Retorna a quantidade de vacinados atrasados na segunda dose em um município. Por exemplo, quantidade de pessoas que moram em Araranguá e estão atrasadas na segunda dose. Além disso, a função filtra o tipo de vacina que a pessoa tomou, se ela tomou CoronaVac o intervalo considerado no cálculo é 21 dias, senão é considerado 90 dias de intervalo.
 ![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeMunAtrasados.png)
 
 ##
 
 **8) quantidadeEstAtrasados : : Vacinados -> CadastroSUS -> Estado -> Data -> Quantidade**
-- Retorna a quantidade de vacinados atrasados na segunda dose em um Estado. Por exemplo, quantidade de pessoas que moram em São Paulo e estão atrasadas na segunda dose. Além disso, a função filtra o tipo de vacina que a pessoa tomou, se ela tomou CoronaVac o intervalo considerado no cálculo é 21 dias, caso não é considerado 90 dias de intervalo.
+- Retorna a quantidade de vacinados atrasados na segunda dose em um Estado. Por exemplo, quantidade de pessoas que moram em São Paulo e estão atrasadas na segunda dose. Além disso, a função filtra o tipo de vacina que a pessoa tomou, se ela tomou CoronaVac o intervalo considerado no cálculo é 21 dias, senão é considerado 90 dias de intervalo.
 ![alt text](https://github.com/WilliamSilveiraF/SistemaSUS/blob/main/Fotos/quantidadeEstAtrasados.png)
 
